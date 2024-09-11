@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F Keys Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press F1 to F24 Keys</h1>
+    <div id="output">Press a key to test.</div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            let key = event.key;
+            let keyCode = event.keyCode;
+            let output = document.getElementById('output');
+            if (keyCode >= 112 && keyCode <= 135) {
+                output.textContent = 'You pressed: ' + key + ' (Key Code: ' + keyCode + ')';
+            } else {
+                output.textContent = 'Press a key to test.';
+            }
+        });
+    </script>
+</body>
+</html>
